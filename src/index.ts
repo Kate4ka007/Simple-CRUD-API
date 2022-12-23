@@ -1,5 +1,5 @@
 import { analytics } from "./modules/analytics.js";
 
-const message: string = 'Hello Node!';
+const message = 'Hello Node!';
 console.log(message);
 analytics('index.ts!');
