@@ -35,9 +35,20 @@ export class Controller {
     });
   }
 
-  /*   async createUser(user: User) { }
-  
-    async updateUser(id: string) { } */
+  async createUser(user: User) {
+    return new Promise((resolve, _) => {
+      const newUser = {
+        id: uuidv4(),
+        username: user.username,
+        age: user.age,
+        hobbies: user.hobbies
+      };
+      this.users.push(newUser);
+      resolve(newUser);
+    });
+  }
+
+  /*   async updateUser(id: string) { } */
 
   public removeUser(id: string) {
     const index = this.users.findIndex(item => item.id === id);

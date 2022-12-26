@@ -1,6 +1,8 @@
 import http from 'http';
 import { Controller } from '../models/controller.js';
 import { validateId } from './validateId.js';
+import { getReqData } from './getData.js';
+import { User } from '../models/models.js';
 
 export const requestHandler = async (req: http.IncomingMessage, res: http.ServerResponse<http.IncomingMessage>) => {
   const persons = Controller.getInstance();
@@ -16,10 +18,18 @@ export const requestHandler = async (req: http.IncomingMessage, res: http.Server
         res.end();
         break;
       case "POST":
-        res.writeHead(201, { "Content-Type": "application/json" });
-        // res.write(JSON.stringify(users));
-        res.end();
+        const data = await getReqData(req) as string;
+        const newUser = await Controller.getInstance().createUser(JSON.parse(data));
+        try {
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(newUser));
+
+        } catch (error) {
+          res.writeHead(400, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ message: error }));
+        }
         break;
+
 
       default:
         break;
