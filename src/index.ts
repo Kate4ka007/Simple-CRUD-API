@@ -1,14 +1,11 @@
-import { analytics } from "./modules/analytics.js";
 import http from 'http';
 import { requestHandler } from "./modules/routes.js";
+import dotenv from 'dotenv';
+import process from "process";
 
-const message = 'Hello Node!';
-console.log(message);
-analytics('index.ts!');
-const PORT = process.env.PORT || 5000;
+dotenv.config();
 
-const server = http.createServer(requestHandler);
+export const server = http.createServer(requestHandler);
+server.listen(process.env.PORT);
 
-server.listen(PORT, () => {
-  console.log(`server started on port: ${PORT}`);
-});
+console.log(`server started on port: ${process.env.PORT}`);

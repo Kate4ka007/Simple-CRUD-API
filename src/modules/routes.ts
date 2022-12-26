@@ -2,7 +2,6 @@ import http from 'http';
 import { Controller } from '../models/controller.js';
 import { validateId } from './validateId.js';
 import { getReqData } from './getData.js';
-import { User } from '../models/models.js';
 
 export const requestHandler = async (req: http.IncomingMessage, res: http.ServerResponse<http.IncomingMessage>) => {
   const persons = Controller.getInstance();
