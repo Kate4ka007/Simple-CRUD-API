@@ -54,6 +54,17 @@ export const requestHandler = async (req: http.IncomingMessage, res: http.Server
           res.end(JSON.stringify({ message: error }));
         }
         break;
+      case "PUT":
+        const data = await getReqData(req) as string;
+        const newUser = Controller.getInstance().updateUser(id, JSON.parse(data)).then(() => {
+          res.writeHead(200, { "Content-Type": "application/json" });
+          res.end(JSON.stringify(newUser));
+        }).catch((error) => {
+          res.writeHead(404, { "Content-Type": "application/json" });
+          res.end(JSON.stringify({ message: error }));
+        });
+
+        break;
 
       default:
         break;

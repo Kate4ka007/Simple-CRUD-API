@@ -48,7 +48,25 @@ export class Controller {
     });
   }
 
-  /*   async updateUser(id: string) { } */
+  async updateUser(id: string, changedUser: User) {
+    return new Promise((resolve, reject) => {
+
+      const index = this.users.findIndex(item => item.id === id);
+      if (index !== -1) {
+        const newUser = {
+          id: id,
+          username: changedUser.username,
+          age: changedUser.age,
+          hobbies: changedUser.hobbies
+        };
+        this.users[index] = newUser;
+        resolve(newUser);
+      } else {
+        reject(`User with id ${id} not found `);
+      }
+
+    });
+  }
 
   public removeUser(id: string) {
     const index = this.users.findIndex(item => item.id === id);
