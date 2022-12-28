@@ -29,7 +29,6 @@ export const requestHandler = async (req: http.IncomingMessage, res: http.Server
         }
         break;
 
-
       default:
         break;
     }
