@@ -1,0 +1,42 @@
+{
+  "name": "simple-crud-api",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon",
+    "build": "npx tsc",
+    "start": "npm run build && node dist/index",
+    "start:prod": "npm run build && node dist/index",
+    "start:dev": "cross-env nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
+    "lint": "npx eslint ./src",
+    "format": "npx eslint ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kate4ka007/Simple-CRUD-API.git"
+  },
+  "author": "Katsiaryna Shlemena",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kate4ka007/Simple-CRUD-API/issues"
+  },
+  "homepage": "https://github.com/Kate4ka007/Simple-CRUD-API#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@types/uuid": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "eslint": "^8.30.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3"
+  }
+}
