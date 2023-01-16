@@ -31,7 +31,7 @@ Setup Postman to test CRUP API
 
 ### Post (Create) user
 
-![Example Post (Create) new user](src/assets/post_user.jpg)
+![Example Post (Create) new user](src/assets/post__user.jpg)
 
 - Server should answer with status code 201 and newly created record
 - Server should answer with status code 400 and corresponding message if request body does not contain required fields
@@ -39,6 +39,7 @@ Setup Postman to test CRUP API
 ### Get by Id
 
 ![Example Get by ID](src/assets/get_user_id.jpg)
+![Example Get by ID](src/assets/get__user_404.jpg)
 
 - Server should answer with status code 200 and and record with id === userId if it exists
 - Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)
