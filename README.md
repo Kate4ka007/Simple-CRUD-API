@@ -25,20 +25,20 @@ Setup Postman to test CRUP API
 
 ### Get all users
 
-![Example Get all users](src/images/get_users.jpg)
+![Example Get all users](src/images/get_users.JPG)
 
 - Server should answer with status code 200 and all users records
 
 ### Post (Create) user
 
-![Example Post (Create) new user](src/images/post_user.jpg)
+![Example Post (Create) new user](src/images/post_user.JPG)
 
 - Server should answer with status code 201 and newly created record
 - Server should answer with status code 400 and corresponding message if request body does not contain required fields
 
 ### Get by Id
 
-![Example Get by ID](src/images/get_user_id.jpg)
+![Example Get by ID](src/images/get_user_id.JPG)
 
 - Server should answer with status code 200 and and record with id === userId if it exists
 - Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)
@@ -46,7 +46,7 @@ Setup Postman to test CRUP API
 
 ### Put (Update) user
 
-![Example Put (Update)](src/images/put_user.jpg)
+![Example Put (Update)](src/images/put_user.JPG)
 
 - Server should answer with status code 200 and updated record
 - Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)
@@ -54,7 +54,7 @@ Setup Postman to test CRUP API
 
 ### Delete Record
 
-![Example Delete](src/images/delete_404.jpg)
+![Example Delete](src/images/delete_404.JPG)
 
 - Server should answer with status code 204 if the record is found and deleted
 - Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)
