@@ -8,6 +8,8 @@
     "dev": "npx nodemon",
     "build": "npx tsc",
     "start": "npm run build && node dist/index",
+    "start:prod": "npm run build && node dist/index",
+    "start:dev": "cross-env nodemon --watch 'src/**/*' -e 'ts' --exec 'ts-node' src/index.ts",
     "lint": "npx eslint ./src",
     "format": "npx eslint ./src --fix"
   },
@@ -34,6 +36,7 @@
     "uuid": "^9.0.0"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.3"
   }
 }
