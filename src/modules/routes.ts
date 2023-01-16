@@ -45,7 +45,7 @@ export const requestHandler = async (req: http.IncomingMessage, res: http.Server
         break;
       case "DELETE":
         try {
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(204, { "Content-Type": "application/json" });
           res.end(JSON.stringify(await persons.removeUser(id)));
         } catch (error) {
           res.writeHead(404, { "Content-Type": "application/json" });
